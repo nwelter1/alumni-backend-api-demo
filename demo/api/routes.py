@@ -5,10 +5,6 @@ from flask import Blueprint, json, request
 
 api = Blueprint('api', __name__, url_prefix='/api')
 
-@api.route('/')
-def home():
-    return {'hello':'message'}
-
 @api.route('/getall', methods=['GET'])
 def getAll():
     with api.open_resource('sample.json', 'r') as db:
